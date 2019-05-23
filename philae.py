@@ -3,8 +3,6 @@ from scipy.integrate import odeint
 from numpy import arange
 import math
 
-#calculando a constante do nosso problema
-import math
 
 G=6.67384e-11
 M=9.982e12
@@ -44,11 +42,17 @@ Vxa0 = cos(angulo) * vel_i
 Vya0 = sen(angulo) * vel_i
 CI  = [xa0, Vxa0, ya0, Vya0]
 
-#Quero fazer um circulo
-circle = Circle((0,0), radius=3)
-plt.show()
+fig, ax = plt.subplots() # note we must use plt.subplots, not plt.subplot
+# (or if you have an existing figure)
+# fig = plt.gcf()
+# ax = fig.gca()
 
 #lista de tempo: vamos rodar 1 anos
 T = arange(0,10,0.005)
 #rodando o ODEINT
 SolucaoTerra = odeint(EqDif,CI,T)
+
+ax.set_aspect(1.0)
+plt.ylim(-.5, .5)
+plt.xlim(-.5, .5)
+plt.show()
