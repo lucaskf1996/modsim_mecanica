@@ -42,10 +42,14 @@ Vxa0 = cos(angulo) * vel_i
 Vya0 = sen(angulo) * vel_i
 CI  = [xa0, Vxa0, ya0, Vya0]
 
+circle1 = plt.Circle((0, 0), 0.2, color='r')
+
 fig, ax = plt.subplots() # note we must use plt.subplots, not plt.subplot
 # (or if you have an existing figure)
 # fig = plt.gcf()
 # ax = fig.gca()
+
+ax.add_artist(circle1)
 
 #lista de tempo: vamos rodar 1 anos
 T = arange(0,10,0.005)
