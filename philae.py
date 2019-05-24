@@ -3,7 +3,7 @@ from scipy.integrate import odeint
 from numpy import arange
 import math
 
-#isso é um teste
+# isso é um teste
 # calculando a constante do nosso problema
 import math
 
@@ -37,23 +37,23 @@ def EqDif(Solucoes, t):
 
 
 # condições inciais
-angulo = 
-vel_i =
+angulo = 0
+vel_i = 702.335332097
 xa0 = 1
 ya0 = 0
-Vxa0 = cos(angulo) * vel_i
-Vya0 = sen(angulo) * vel_i
+Vxa0 = math.cos(angulo) * vel_i
+Vya0 = math.sin(angulo) * vel_i
 CI = [xa0, Vxa0, ya0, Vya0]
 
-fig, ax = plt.subplots() # note we must use plt.subplots, not plt.subplot
+fig, ax = plt.subplots()  # note we must use plt.subplots, not plt.subplot
 # (or if you have an existing figure)
 # fig = plt.gcf()
 # ax = fig.gca()
 
-#lista de tempo: vamos rodar 1 anos
-T = arange(0,10,0.005)
-#rodando o ODEINT
-SolucaoTerra = odeint(EqDif,CI,T)
+# lista de tempo: vamos rodar 1 anos
+T = arange(0, 10, 0.005)
+# rodando o ODEINT
+#SolucaoTerra = odeint(EqDif, CI, T)
 
 ax.set_aspect(1.0)
 plt.ylim(-.5, .5)
